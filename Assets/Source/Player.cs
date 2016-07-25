@@ -6,11 +6,16 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+	public enum Attack {
+		NONE, WITHDRAW, INJECT
+	}
+
 	public float speed;
-	public float cooldown = 2;
+	public float speedWhileCharging;
 
 	public float transferWithdraw = 1;
 	public float transferInject = 1;
+	public float transferDuration = 1;
 	public float blood = 0;
 	public float maxBlood = 3;
 
@@ -18,7 +23,6 @@ public class Player : MonoBehaviour {
 	public float maxHealth = 3;
 
 	public HitBoxMemory hitbox;
-	public ParticleSystem system;
 
 	private Animator animator;
 	private FixedJoint2D joint;
@@ -26,15 +30,15 @@ public class Player : MonoBehaviour {
 
 	private Attachable attached;
 
-	private float cooldownRemaining;
-
 	public GameObject[] destroyOnDeath;
 
-	void Start(){
+	private Attack currentAttack;
+	private float attachRemaining;
+
+	void Start() {
 		animator = GetComponent<Animator>();
 		joint = GetComponent<FixedJoint2D>();
 		body = GetComponent<Rigidbody2D>();
-		//Cursor.visible = false;
 	}
 
 	void FixedUpdate() {
@@ -42,7 +46,7 @@ public class Player : MonoBehaviour {
 			return;
 		if (attached == null) {
 			Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-			body.AddForce(input * speed);
+			body.AddForce(input * (currentAttack == Attack.NONE ? speed : speedWhileCharging));
 		}
 
 		animator.SetFloat("Velocity", body.velocity.magnitude);
@@ -52,28 +56,42 @@ public class Player : MonoBehaviour {
 		if (health < 0)
 			return;
 
-		cooldownRemaining -= Time.deltaTime;
-		ParticleSystem.EmissionModule emission = system.emission;
-		emission.enabled = cooldownRemaining > 0;
+		// TODO: event in animation that says "stab entirely over", ie at end of fail or release (in idle?)
+		if (currentAttack == Attack.NONE) {
+			if (Input.GetButtonDown("WithdrawStab")) {
+				animator.SetBool("Charging", true);
+				currentAttack = Attack.WITHDRAW;
+				Debug.Log("Stab start");
+			} else if (Input.GetButtonDown("InjectStab")) {
+				animator.SetBool("Charging", true);
+				currentAttack = Attack.INJECT;
+				Debug.Log("Stab start");
+			}
+		}
+		if (currentAttack != Attack.NONE) {
+			if (currentAttack == Attack.WITHDRAW && Input.GetButtonUp("WithdrawStab")) {
+				if (animator.GetCurrentAnimatorStateInfo(1).IsName("PlayerBodyCharge")) {
+					currentAttack = Attack.NONE;
+					Debug.Log("was charge");
+				}
+				animator.SetBool("Charging", false);
+			} else if (currentAttack == Attack.INJECT && Input.GetButtonUp("InjectStab")) {
+				if (animator.GetCurrentAnimatorStateInfo(1).IsName("PlayerBodyCharge")) {
+					currentAttack = Attack.NONE;
+					Debug.Log("was charge");
+				}
+				animator.SetBool("Charging", false);
+			}
+		}
 
 		if (attached == null) {
-			if (Input.GetButtonDown("Attach") && cooldownRemaining <= 0) {
-				animator.SetTrigger("Stab");
-			}
-
-			Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint (transform.position);
+			Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
 			float angle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
 			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
 		} else {
-			if (Input.GetButtonDown("Dettach")) {
+			attachRemaining -= Time.deltaTime;
+			if (attachRemaining <= 0) {
 				SetAttached(null);
-			}
-
-			if (Input.GetButtonDown("Inject")) {
-				blood -= attached.TransferBlood(Mathf.Min(transferInject, blood));
-			} else if (Input.GetButtonDown("Withdraw")) {
-				blood -= attached.TransferBlood(-Mathf.Min(transferWithdraw, maxBlood - blood));
 			}
 		}
 	}
@@ -93,19 +111,21 @@ public class Player : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
+	public void StabOver() {
+		currentAttack = Attack.NONE;
+		Debug.Log("StabOver");
+	}
+
 	public void CheckStabHit() {
 		Attachable hit = hitbox.GetOverlap();
-		if (hit == null || !hit.enabled) {
-			cooldownRemaining = cooldown;
-			return;
-		}
+
+		Debug.Log("Check hit");
 
 		SetAttached(hit);
 	}
 
 	public void SetAttached(Attachable attachable) {
 		if (attached != null && attachable == null) {
-			cooldownRemaining = cooldown;
 			attached.Dettach();
 			attached = null;
 			body.freezeRotation = true;
@@ -116,6 +136,7 @@ public class Player : MonoBehaviour {
 
 		if (attached == null && attachable != null) {
 			attached = attachable;
+			attachRemaining = transferDuration;
 			attachable.Attach(this);
 			body.freezeRotation = false;
 			animator.SetBool("Attached", true);
@@ -125,6 +146,13 @@ public class Player : MonoBehaviour {
 			}
 			joint.enabled = true;
 			joint.connectedBody = otherBody;
+
+			if (currentAttack == Attack.WITHDRAW) {
+				blood -= attached.TransferBlood(-Mathf.Min(transferWithdraw, maxBlood - blood));
+			}
+			if (currentAttack == Attack.INJECT) {
+				blood -= attached.TransferBlood(Mathf.Min(transferInject, blood));
+			}
 			return;
 		}
 
