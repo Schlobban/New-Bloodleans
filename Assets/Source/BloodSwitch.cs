@@ -6,7 +6,8 @@ public class BloodSwitch : MonoBehaviour {
 
   public Attachable attachable;
 
-  public float onThreshold = 1;
+  public float lowerOn = 1;
+  public float upperOn = 1;
 
   public UnityEvent OnTurnOn;
   public UnityEvent OnTurnOff;
@@ -19,10 +20,14 @@ public class BloodSwitch : MonoBehaviour {
   }
 
   void OnBloodChange(float before, float after) {
-    if (before < onThreshold && after >= onThreshold)
+    if (!Inside(before) && Inside(after))
       OnTurnOn.Invoke();
-    if (before >= onThreshold && after < onThreshold)
+    if (Inside(before) && !Inside(after))
       OnTurnOff.Invoke();
+  }
+
+  bool Inside(float blood) {
+    return lowerOn <= blood || blood <= upperOn;
   }
 
 }
