@@ -20,14 +20,19 @@ public class BloodSwitch : MonoBehaviour {
   }
 
   void OnBloodChange(float before, float after) {
-    if (!Inside(before) && Inside(after))
+    Debug.Log(before + " >> " + after);
+    if (!Inside(before) && Inside(after)) {
       OnTurnOn.Invoke();
-    if (Inside(before) && !Inside(after))
+      Debug.Log("On");
+    }
+    if (Inside(before) && !Inside(after)) {
       OnTurnOff.Invoke();
+      Debug.Log("Off");
+    }
   }
 
   bool Inside(float blood) {
-    return lowerOn <= blood || blood <= upperOn;
+    return lowerOn <= blood && blood <= upperOn;
   }
 
 }
