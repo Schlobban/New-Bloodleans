@@ -11,7 +11,11 @@ public class BloodSpriteChange : MonoBehaviour {
 
 	public float levelSize = 1;
 
+	public float animationSpeed;
+
 	private SpriteRenderer sRenderer;
+
+	private float shownAmount;
 
 	void Start() {
 		sRenderer = GetComponent<SpriteRenderer>();
@@ -21,10 +25,16 @@ public class BloodSpriteChange : MonoBehaviour {
 	}
 
 	void Update() {
-		if (attachable.blood <= 0) {
+		if (animationSpeed > 0) {
+			shownAmount = Mathf.Lerp(shownAmount, attachable.blood, animationSpeed * Time.deltaTime);
+		} else {
+			shownAmount = attachable.blood;
+		}
+
+		if (shownAmount <= 0) {
 			sRenderer.sprite = empty;
 		} else {
-			int level = Mathf.FloorToInt(attachable.blood / levelSize) - 1;
+			int level = Mathf.FloorToInt(shownAmount / levelSize) - 1;
 			sRenderer.sprite = levels[Mathf.Min(Mathf.Max(0, level), levels.Length-1)];
 		}
 	}
