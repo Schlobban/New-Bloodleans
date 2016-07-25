@@ -5,6 +5,7 @@ using System.Collections;
 public class BloodSpriteChange : MonoBehaviour {
 
 	public Attachable attachable;
+	public Player player;
 
 	private Sprite empty;
 	public Sprite[] levels;
@@ -25,10 +26,11 @@ public class BloodSpriteChange : MonoBehaviour {
 	}
 
 	void Update() {
+		float target = attachable != null ? attachable.blood : player.blood;
 		if (animationSpeed > 0) {
-			shownAmount = Mathf.Lerp(shownAmount, attachable.blood, animationSpeed * Time.deltaTime);
+			shownAmount = Mathf.Lerp(shownAmount, target, animationSpeed * Time.deltaTime);
 		} else {
-			shownAmount = attachable.blood;
+			shownAmount = target;
 		}
 
 		if (shownAmount <= 0) {
