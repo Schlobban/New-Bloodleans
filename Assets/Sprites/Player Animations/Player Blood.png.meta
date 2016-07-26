@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 7c8b478477e6149adb945e86b7b28e46
+timeCreated: 1469531086
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Player Blood_0
+    21300002: Player Blood_1
+    21300004: Player Blood_2
+    21300006: Player Blood_3
+    21300008: Player Blood_4
+    21300010: Player Blood_5
+    21300012: Player Blood_6
+    21300014: Player Blood_7
+    21300016: Player Blood_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Player Blood_0
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 765
+        width: 86
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.639984, y: 82.899994}
+        - {x: -17.639984, y: 78.899994}
+        - {x: -18.639984, y: 68.899994}
+        - {x: -18.639984, y: 54.899994}
+        - {x: -15.639984, y: 52.899994}
+        - {x: -7.639984, y: -81.100006}
+        - {x: -5.639984, y: -82.100006}
+        - {x: 7.360016, y: -82.100006}
+        - {x: 19.360016, y: 39.899994}
+        - {x: 19.360016, y: 80.899994}
+        - {x: 17.360016, y: 82.899994}
+    - name: Player Blood_1
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 765
+        width: 85
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.779968, y: 82.899994}
+        - {x: -17.779968, y: -82.100006}
+        - {x: 9.220032, y: -82.100006}
+        - {x: 19.220032, y: -32.100006}
+        - {x: 19.220032, y: 82.899994}
+    - name: Player Blood_2
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 765
+        width: 87
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.626648, y: 82.899994}
+        - {x: -18.626648, y: 68.899994}
+        - {x: -18.626648, y: -1.1000061}
+        - {x: -4.626648, y: -79.100006}
+        - {x: -1.626648, y: -82.100006}
+        - {x: 7.373352, y: -82.100006}
+        - {x: 15.373352, y: -71.100006}
+        - {x: 19.373352, y: -30.100006}
+        - {x: 19.373352, y: 82.899994}
+    - name: Player Blood_3
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 765
+        width: 86
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.519958, y: 82.899994}
+        - {x: -18.519958, y: -35.100006}
+        - {x: -4.5199585, y: -82.100006}
+        - {x: 19.480042, y: -82.100006}
+        - {x: 19.480042, y: 82.899994}
+    - name: Player Blood_4
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 765
+        width: 86
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.399963, y: 82.899994}
+        - {x: -18.399963, y: -82.100006}
+        - {x: 19.600037, y: -82.100006}
+        - {x: 19.600037, y: 82.899994}
+    - name: Player Blood_5
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 765
+        width: 86
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.293335, y: 82.899994}
+        - {x: -18.293335, y: -82.100006}
+        - {x: 19.706665, y: -82.100006}
+        - {x: 19.706665, y: 82.899994}
+    - name: Player Blood_6
+      rect:
+        serializedVersion: 2
+        x: 1754
+        y: 765
+        width: 87
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.626648, y: 82.899994}
+        - {x: -18.626648, y: 78.899994}
+        - {x: -18.626648, y: -62.100006}
+        - {x: -7.626648, y: -82.100006}
+        - {x: 16.373352, y: -82.100006}
+        - {x: 19.373352, y: -77.100006}
+        - {x: 19.373352, y: 82.899994}
+    - name: Player Blood_7
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 765
+        width: 86
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.386658, y: 82.899994}
+        - {x: -18.386658, y: -68.100006}
+        - {x: -7.3866577, y: -81.100006}
+        - {x: -5.3866577, y: -82.100006}
+        - {x: 6.6133423, y: -82.100006}
+        - {x: 8.613342, y: -79.100006}
+        - {x: 19.613342, y: -62.100006}
+        - {x: 19.613342, y: 82.899994}
+    - name: Player Blood_8
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 765
+        width: 84
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.940002, y: 82.899994}
+        - {x: -17.940002, y: -77.100006}
+        - {x: -16.940002, y: -79.100006}
+        - {x: -9.940002, y: -82.100006}
+        - {x: 14.059998, y: -82.100006}
+        - {x: 19.059998, y: -80.100006}
+        - {x: 19.059998, y: 76.899994}
+        - {x: 15.059998, y: 82.899994}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

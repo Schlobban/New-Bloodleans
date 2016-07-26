@@ -70,7 +70,8 @@ GitHub.sublime-settings
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -95,6 +96,7 @@ Temporary Items
 ### Windows ###
 # Windows image file caches
 Thumbs.db
+Thumbs.db.meta
 ehthumbs.db
 
 # Folder config file

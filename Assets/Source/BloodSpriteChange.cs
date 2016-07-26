@@ -29,6 +29,8 @@ public class BloodSpriteChange : MonoBehaviour {
 		float target = attachable != null ? attachable.blood : player.blood;
 		if (animationSpeed > 0) {
 			shownAmount = Mathf.Lerp(shownAmount, target, animationSpeed * Time.deltaTime);
+			if (Mathf.Abs(shownAmount - target) < 0.1)
+				shownAmount = target;
 		} else {
 			shownAmount = target;
 		}

@@ -56,7 +56,6 @@ public class Player : MonoBehaviour {
 		if (health < 0)
 			return;
 
-		// TODO: event in animation that says "stab entirely over", ie at end of fail or release (in idle?)
 		if (currentAttack == Attack.NONE) {
 			if (Input.GetButtonDown("WithdrawStab")) {
 				animator.SetBool("Charging", true);
