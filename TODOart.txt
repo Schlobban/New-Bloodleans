@@ -1,3 +1,4 @@
+Saknas en sprite för innehållet i sprutan när den är tom (dvs enbart pinnen och plattan)
 Blodsäckar, fylld, ofylld, (Olika storlekar?)
 Inlämningsplats för blod
 pressure plate, på och avläge
