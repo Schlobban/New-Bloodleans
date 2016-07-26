@@ -20,14 +20,11 @@ public class BloodSwitch : MonoBehaviour {
   }
 
   void OnBloodChange(float before, float after) {
-    Debug.Log(before + " >> " + after);
     if (!Inside(before) && Inside(after)) {
       OnTurnOn.Invoke();
-      Debug.Log("On");
     }
     if (Inside(before) && !Inside(after)) {
       OnTurnOff.Invoke();
-      Debug.Log("Off");
     }
   }
 

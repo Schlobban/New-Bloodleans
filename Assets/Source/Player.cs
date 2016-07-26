@@ -60,24 +60,20 @@ public class Player : MonoBehaviour {
 			if (Input.GetButtonDown("WithdrawStab")) {
 				animator.SetBool("Charging", true);
 				currentAttack = Attack.WITHDRAW;
-				Debug.Log("Stab start");
 			} else if (Input.GetButtonDown("InjectStab")) {
 				animator.SetBool("Charging", true);
 				currentAttack = Attack.INJECT;
-				Debug.Log("Stab start");
 			}
 		}
 		if (currentAttack != Attack.NONE) {
 			if (currentAttack == Attack.WITHDRAW && Input.GetButtonUp("WithdrawStab")) {
 				if (animator.GetCurrentAnimatorStateInfo(1).IsName("PlayerBodyCharge")) {
 					currentAttack = Attack.NONE;
-					Debug.Log("was charge");
 				}
 				animator.SetBool("Charging", false);
 			} else if (currentAttack == Attack.INJECT && Input.GetButtonUp("InjectStab")) {
 				if (animator.GetCurrentAnimatorStateInfo(1).IsName("PlayerBodyCharge")) {
 					currentAttack = Attack.NONE;
-					Debug.Log("was charge");
 				}
 				animator.SetBool("Charging", false);
 			}
@@ -112,13 +108,10 @@ public class Player : MonoBehaviour {
 
 	public void StabOver() {
 		currentAttack = Attack.NONE;
-		Debug.Log("StabOver");
 	}
 
 	public void CheckStabHit() {
 		Attachable hit = hitbox.GetOverlap();
-
-		Debug.Log("Check hit");
 
 		SetAttached(hit);
 	}

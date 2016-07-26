@@ -1,4 +1,3 @@
 Diffuse maps
-Sprutans funktionalitet
 Animera krokodilen
 Tips från  Olle - lägga till att ögonen på player lyser rött eller något när ens spruta är full med blod - kan vara bra att markera
