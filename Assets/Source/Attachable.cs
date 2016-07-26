@@ -7,6 +7,9 @@ public class Attachable : MonoBehaviour {
   public float blood;
   public float maxBlood;
 
+  public bool allowInject = true;
+  public bool allowWithdraw = true;
+
   public UnityEvent OnAttached;
   public UnityEvent OnDettached;
 
@@ -37,7 +40,7 @@ public class Attachable : MonoBehaviour {
   }
 
   public float TransferBlood(float diff) {
-    if (!enabled)
+    if (!enabled || (diff < 0 && !allowWithdraw) || (diff > 0 && !allowInject))
       return 0;
 
     float prev = blood;
