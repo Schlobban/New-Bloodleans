@@ -13,6 +13,7 @@ public class Attachable : MonoBehaviour {
   public UnityEvent OnAttached;
   public UnityEvent OnDettached;
 
+
   public bool isAttached {
     get { return player != null; }
   }
@@ -23,6 +24,7 @@ public class Attachable : MonoBehaviour {
   public class BloodChangeEvent : UnityEvent<float, float> {}
 
   public BloodChangeEvent OnBloodChange;
+
 
   void OnDisable() {
     if (player != null)
@@ -58,5 +60,4 @@ public class Attachable : MonoBehaviour {
     OnBloodChange.Invoke(prev, blood);
     return diff;
   }
-
 }

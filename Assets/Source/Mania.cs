@@ -38,6 +38,7 @@ public class Mania : MonoBehaviour {
 			return;
 		}
 
+
 		Vector2 dir = target.position - transform.position;
 		if (dir.sqrMagnitude > aggroDistance * aggroDistance) {
 			animator.SetBool("Active", false);
