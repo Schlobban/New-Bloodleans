@@ -15,7 +15,6 @@ public class Player : MonoBehaviour {
 
 	public float transferWithdraw = 1;
 	public float transferInject = 1;
-	public float transferDuration = 1;
 	public float blood = 0;
 	public float maxBlood = 3;
 
@@ -128,7 +127,6 @@ public class Player : MonoBehaviour {
 
 		if (attached == null && attachable != null) {
 			attached = attachable;
-			attachRemaining = transferDuration;
 			attachable.Attach(this);
 			body.freezeRotation = false;
 			animator.SetBool("Attached", true);
@@ -139,12 +137,15 @@ public class Player : MonoBehaviour {
 			joint.enabled = true;
 			joint.connectedBody = otherBody;
 
+			float transferAmount = 0;
 			if (currentAttack == Attack.WITHDRAW) {
-				blood -= attached.TransferBlood(-Mathf.Min(transferWithdraw, maxBlood - blood));
+				transferAmount = attached.TransferBlood(-Mathf.Min(transferWithdraw, maxBlood - blood));
 			}
 			if (currentAttack == Attack.INJECT) {
-				blood -= attached.TransferBlood(Mathf.Min(transferInject, blood));
+				transferAmount = attached.TransferBlood(Mathf.Min(transferInject, blood));
 			}
+			blood -= transferAmount;
+			attachRemaining = attached.baseTransferDuration + Mathf.Abs(transferAmount) * attached.transferDurationPerUnit;
 			return;
 		}
 

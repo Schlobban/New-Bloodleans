@@ -7,6 +7,9 @@ public class Attachable : MonoBehaviour {
   public float blood;
   public float maxBlood;
 
+  public float transferDurationPerUnit = 0.2f;
+  public float baseTransferDuration = 0.5f;
+
   public bool allowInject = true;
   public bool allowWithdraw = true;
 
