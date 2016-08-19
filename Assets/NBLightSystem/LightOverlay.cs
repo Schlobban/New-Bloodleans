@@ -42,7 +42,7 @@ public class LightOverlay : MonoBehaviour {
     }
 
     Graphics.Blit(source, destination);
-    Graphics.Blit(shadow, destination, overlayMaterial);
+   	Graphics.Blit(shadow, destination, overlayMaterial);
 
     RenderTexture.ReleaseTemporary(shadow);
   }

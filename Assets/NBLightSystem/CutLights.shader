@@ -31,11 +31,6 @@
     o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
     o.uv = v.texcoord.xy;
 
-    #if UNITY_UV_STARTS_AT_TOP
-    if(_MainTex_TexelSize.y<0.0)
-      o.uv.y = 1.0-o.uv.y;
-    #endif
-
     return o;
   }
 

@@ -4,7 +4,7 @@ using System.Collections;
 public class NBLight : MonoBehaviour {
 
   public float gradientStart = 5;
-  public float gradientEnd = 100;
+  public float gradientEnd = 10;
 
   private LightOverlay overlay;
 
