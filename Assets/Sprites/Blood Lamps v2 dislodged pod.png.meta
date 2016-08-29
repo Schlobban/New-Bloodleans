@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f6648a4efd345b84bbeaf94b0be9dbfe
 timeCreated: 1471774582
 licenseType: Free
@@ -27,6 +28,13 @@ TextureImporter:
     21300040: Blood Lamps v2 dislodged pod_20
     21300042: Blood Lamps v2 dislodged pod_21
     21300044: Blood Lamps v2 dislodged pod_22
+=======
+guid: 340fd3446d95ee744894db3889c24923
+timeCreated: 1471968056
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> 652c78e7d03516888bc02d1e109cb9ba61d2a55c
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,7 +61,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
+<<<<<<< HEAD
     aniso: 16
+=======
+    aniso: -1
+>>>>>>> 652c78e7d03516888bc02d1e109cb9ba61d2a55c
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -61,7 +73,11 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> 652c78e7d03516888bc02d1e109cb9ba61d2a55c
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,6 +88,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+<<<<<<< HEAD
     sprites:
     - name: Blood Lamps v2 dislodged pod_0
       rect:
@@ -778,6 +795,9 @@ TextureImporter:
         - {x: 36.526733, y: -24.759998}
         - {x: 36.526733, y: 20.240002}
         - {x: 34.526733, y: 27.240002}
+=======
+    sprites: []
+>>>>>>> 652c78e7d03516888bc02d1e109cb9ba61d2a55c
     outline: []
   spritePackingTag: 
   userData: 

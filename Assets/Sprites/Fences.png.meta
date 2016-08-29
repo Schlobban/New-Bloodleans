@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ab64b5454201f5a4caddbd2a1fbf6923
 timeCreated: 1471774469
 licenseType: Free
@@ -31,6 +32,17 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+=======
+guid: 485282822bc043d43a43c11a02aa350e
+timeCreated: 1471968060
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName: {}
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+>>>>>>> 652c78e7d03516888bc02d1e109cb9ba61d2a55c
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -53,7 +65,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
+<<<<<<< HEAD
     aniso: 16
+=======
+    aniso: -1
+>>>>>>> 652c78e7d03516888bc02d1e109cb9ba61d2a55c
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -61,7 +77,11 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> 652c78e7d03516888bc02d1e109cb9ba61d2a55c
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,6 +92,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+<<<<<<< HEAD
     sprites:
     - name: Fences_0
       rect:
@@ -887,6 +908,9 @@ TextureImporter:
         - {x: -139.15997, y: -76.80666}
         - {x: -140.15997, y: -73.80666}
         - {x: -143.15997, y: -73.80666}
+=======
+    sprites: []
+>>>>>>> 652c78e7d03516888bc02d1e109cb9ba61d2a55c
     outline: []
   spritePackingTag: 
   userData: 
